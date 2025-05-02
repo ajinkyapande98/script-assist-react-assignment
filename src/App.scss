@@ -1,3 +1,169 @@
+body {
+	background-color: #f9fafb;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+.app-shell {
+	min-height: 100vh;
+}
+
+.page-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+// Typography enhancements
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: -0.025em;
+}
+
+// Card and paper hover effects
+.mantine-Paper-root, .mantine-Card-root {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	
+	&:hover {
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	}
+}
+
+// Interactive elements
+.mantine-Button-root {
+	transition: all 0.2s ease;
+	
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+// Table enhancements
+.mantine-Table-root {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	
+	th {
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		color: #6b7280;
+		background-color: #f8fafc;
+	}
+	
+	td, th {
+		padding: 12px 16px;
+		border-bottom: 1px solid #e5e7eb;
+	}
+	
+	tbody tr {
+		transition: background-color 0.15s ease;
+		
+		&:hover {
+			background-color: #f8fafc;
+		}
+	}
+}
+
+// Better form elements
+.mantine-TextInput-input, 
+.mantine-PasswordInput-input,
+.mantine-Textarea-input,
+.mantine-Select-input {
+	transition: border-color 0.15s ease;
+	
+	&:focus {
+		border-color: #3b82f6;
+		box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+	}
+}
+
+// Animation utilities
+.fade-in {
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// Skeleton loading
+.skeleton {
+	background: linear-gradient(
+		90deg,
+		rgba(226, 232, 240, 0.6) 25%,
+		rgba(226, 232, 240, 0.9) 37%,
+		rgba(226, 232, 240, 0.6) 63%
+	);
+	background-size: 400% 100%;
+	animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+
+// Star Wars specific styles
+.sw-character-card {
+	border-left: 4px solid #3b82f6;
+	transition: all 0.2s ease;
+	
+	&:hover {
+		transform: translateY(-2px);
+	}
+}
+
+.sw-film-accordion {
+	.mantine-Accordion-item {
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: 8px;
+		border: 1px solid #e5e7eb;
+		
+		.mantine-Accordion-control {
+			padding: 16px;
+			
+			&:hover {
+				background-color: #f8fafc;
+			}
+		}
+		
+		.mantine-Accordion-content {
+			padding: 16px;
+			background-color: #f8fafc;
+		}
+	}
+}
+
+// For mobile responsiveness
+@media (max-width: 768px) {
+	.page-container {
+		padding: 0 12px;
+	}
+	
+	.mantine-Table-root {
+		font-size: 0.875rem;
+		
+		td, th {
+			padding: 8px 12px;
+		}
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
